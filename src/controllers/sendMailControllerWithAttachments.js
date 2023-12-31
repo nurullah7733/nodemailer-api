@@ -1,19 +1,11 @@
 const SendEmailUtilityWithAttachment = require("../utils/sendEmailUtilityWithAttachments");
 
 const sendMailWithAttachmentsController = async (req, res) => {
-  let {
-    name,
-    email,
-    companyName,
-    website,
-    country,
-    services,
-    returnFileAs,
-    instruction,
-  } = req.body;
+  let { name, email, phone, website, message } = req.body;
   try {
     var urls = [];
     const files = req.files;
+    console.log(files, " f");
     for (const file of files) {
       const { path } = file;
       urls.push(path);
@@ -22,18 +14,15 @@ const sendMailWithAttachmentsController = async (req, res) => {
     let sendMialResult = await SendEmailUtilityWithAttachment(
       name,
       email,
-      companyName,
+      phone,
       website,
-      country,
-      services,
-      returnFileAs,
-      instruction,
+      message,
       urls
     );
 
     res.status(200).json({ status: "success", data: sendMialResult });
   } catch (error) {
-    return res.status(401).json({ status: "fail", data: error });
+    return res.status(401).json({ status: "fail", data: error.toString() });
   }
 };
 

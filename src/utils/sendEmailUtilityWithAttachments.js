@@ -4,12 +4,9 @@ const smtpTransport = require("nodemailer-smtp-transport");
 const SendEmailUtilityWithAttachment = async (
   name,
   email,
-  companyName,
+  phone,
   website,
-  country,
-  services,
-  returnFileAs,
-  instruction,
+  message,
   freeTrialFiles
 ) => {
   var transporter = nodemailer.createTransport(
@@ -35,10 +32,10 @@ const SendEmailUtilityWithAttachment = async (
   }
 
   var mailOptions = {
-    from: `Graphicsviewpoint <graphicsviewpoint24@gmail.com>`,
-    to: ["info@graphicsviewpoint.com", "graphicsviewpoint24@gmail.com"],
+    from: `prominentgraphics <nurullah7733@gmail.com>`,
+    to: ["info@prominentgraphics.com", "nurullah7733@gmail.com"],
     subject: "Free Trial",
-    html: `<h1>Name: ${name}</h1> <h2>Email: ${email}</h2> <h3>company name: ${companyName}</h3> <h4>website: ${website}</h4> <h4>country: ${country}</h4> <h4>services: ${services}</h4> <h4>return file as: ${returnFileAs}</h4> <h4>instruction: ${instruction}</h4>`,
+    html: `<h1>Name: ${name}</h1> <h2>Email: ${email}</h2> <h3>Phone: ${phone}</h3> <h4>website: ${website}</h4>  <h4>Instructions: ${message}</h4> `,
     attachments: att,
   };
 

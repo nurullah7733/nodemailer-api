@@ -1,12 +1,13 @@
 const SendEmailUtilityTextOnly = require("../utils/sendEmailUtilityTextOnly");
 
 const sendMailTextOnlyController = async (req, res) => {
-  let { name, email, phone, description } = req.body;
+  let { name, email, phone, companyName, description } = req.body;
   try {
     let sendMialResult = await SendEmailUtilityTextOnly(
       name,
       email,
       phone,
+      companyName,
       description
     );
 
