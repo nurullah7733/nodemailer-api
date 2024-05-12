@@ -1,14 +1,12 @@
-const SendEmailUtilityTextOnly = require("../utils/sendEmailUtilityTextOnly");
+const SendEmailUtilityTextOnly = require("../utils/sendEmailUtilityFreeQuetTextOnly");
 
 const sendMailFreeQuetTextOnlyController = async (req, res) => {
-  let { name, email, phone, companyName, description } = req.body;
+  let { email, services, number_of_images } = req.body;
   try {
     let sendMialResult = await SendEmailUtilityTextOnly(
-      name,
       email,
-      phone,
-      companyName,
-      description
+      services,
+      number_of_images
     );
 
     res.status(200).json({ status: "success", data: sendMialResult });
