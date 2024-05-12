@@ -1,7 +1,7 @@
 const nodemailer = require("nodemailer");
 const smtpTransport = require("nodemailer-smtp-transport");
 
-const SendEmailUtilityTextOnly = async (
+const SendEmailUtilityFreeQuetTextOnly = async (
   name,
   email,
   phone,
@@ -31,4 +31,4 @@ const SendEmailUtilityTextOnly = async (
   return await transporter.sendMail(mailOptions);
 };
 
-module.exports = SendEmailUtilityTextOnly;
+module.exports = SendEmailUtilityFreeQuetTextOnly;
