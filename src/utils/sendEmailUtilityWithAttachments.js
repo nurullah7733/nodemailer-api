@@ -32,7 +32,7 @@ const SendEmailUtilityWithAttachment = async (
   }
 
   var mailOptions = {
-    from: `entiregraphics <contact.entiregraphics@gmail.com>`,
+    from: `nur <contact.entiregraphics@gmail.com>`,
     to: ["info@entiregraphics.com", "contact.entiregraphics@gmail.com"],
     subject: "Free Trial",
     html: `<h1>Name: ${name}</h1> <h2>Email: ${email}</h2> <h3>Phone: ${phone}</h3> <h4>website: ${website}</h4>  <h4>Instructions: ${message}</h4> `,

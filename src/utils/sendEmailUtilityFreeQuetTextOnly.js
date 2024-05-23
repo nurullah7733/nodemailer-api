@@ -21,7 +21,7 @@ const SendEmailUtilityFreeQuetTextOnly = async (
 
   var mailOptions = {
     from: `entiregraphics <contact.entiregraphics@gmail.com>`,
-    to: ["info@entiregraphics.com", "contact.entiregraphics@gmail.com"],
+    to: ["nurullah7733@gmail.com"],
     subject: "Contact Us",
     html: `<h1>Email: ${email}</h1> <h2>Services: ${services} </h2> <h2>Number Of Images: ${number_of_images} </h2>   `,
   };
